@@ -9,14 +9,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableNeo4jRepositories(basePackages = "com.example.neo4jclasshierarchydemo.repository" /* , repositoryBaseClass = BaseNeo4jRepositoryImpl.class */)
+@EnableNeo4jRepositories(basePackages = { "com.example.neo4jclasshierarchydemo.repository", "com.example.neo4jclasshierarchydemo.entities.experiment"} /* , repositoryBaseClass = BaseNeo4jRepositoryImpl.class */)
 @Slf4j
 public class Neo4jConfig extends Neo4jDataAutoConfiguration {
 
-    private static final String DOMAIN_PACKAGES = "com.example.neo4jclasshierarchydemo.entities";
 
-
-/*
+    /*
     @Bean
     public Neo4jConversions neo4jConversions()
     {

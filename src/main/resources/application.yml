@@ -1,0 +1,39 @@
+debug: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+        security: INFO
+    com:
+      example: DEBUG
+
+server:
+  port: 8091
+  servlet:
+    context-path: /
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+    min-response-size: 1024
+
+spring:
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 5MB
+
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSX
+    joda-date-time-format: yyyy-MM-dd'T'HH:mm:ss.SSSX
+
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: 123456
+    pool:
+      max-connection-pool-size: 32
